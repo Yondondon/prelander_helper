@@ -28,8 +28,8 @@ class ImageCleaner extends Component {
     }
 
     //send link to server
-    // let url = "http://localhost:1535/find_trash_images";
     let url = "http://sitish.com:1535/find_trash_images";
+    // let url = "http://localhost:1535/find_trash_images";
     fetch(url, {
       method: "POST",
       body: JSON.stringify({
@@ -61,6 +61,7 @@ class ImageCleaner extends Component {
 
   deleteTrashImages = () => {
     let url = "http://sitish.com:1535/delele_trash_images";
+    // let url = "http://localhost:1535/delele_trash_images";
     fetch(url)
     .then(response => response.json())
     .then(data => {
@@ -92,7 +93,7 @@ class ImageCleaner extends Component {
         {
           this.state.show_confirm_block && (
             <div className="ic_confim_delete_block">
-              <p>These files will be premanently removed. Are you shure?</p>
+              <p>These files will be premanently removed. Are you sure?</p>
               <button id="ic_confirm_btn" className="custom_button ic_confirm_btn" onClick={this.deleteTrashImages}>Confirm!</button>
             </div> 
           )
